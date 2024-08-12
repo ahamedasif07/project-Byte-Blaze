@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 
 const Navbar = () => {
@@ -28,9 +28,9 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className="navbar bg-base-100 shadow-lg px-14 fixed z-10">
+            <div className="navbar bg-base-100 shadow-lg px-14 ">
   <div className="flex-1">
-    <a className="btn btn-ghost font-bold gap-0 text-xl"><span className="text-purple-600 gap-0">Byte</span> <span className="text-red-600">Blaze</span></a>
+    <Link to='/' className="btn btn-ghost font-bold gap-0 text-xl"><span className="text-purple-600 gap-0">Byte</span> <span className="text-red-600">Blaze</span></Link>
   </div>
   
   <div className="flex-none">

@@ -2,7 +2,7 @@
 const Blogs = () => {
     return (
         <div>
-            <h2>this is block page</h2>
+            <h2 className="text-7xl">this is block page</h2>
         </div>
     );
 };
