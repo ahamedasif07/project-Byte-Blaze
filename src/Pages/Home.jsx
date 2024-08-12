@@ -1,13 +1,11 @@
+import { Outlet } from "react-router";
 import Navbar from "./Components/Navbar";
 
 
 const Home = () => {
     return (
         <div>
-            <div className="h-16">
-            <Navbar></Navbar>
-            </div>
-            <h2>home page</h2>
+            <h2>homme page</h2>
         </div>
     );
 };
