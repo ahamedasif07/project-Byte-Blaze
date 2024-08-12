@@ -3,7 +3,7 @@
 const BookMarks = () => {
     return (
         <div>
-            <h2 className="text-7xl">this is from bookmarks</h2>
+            <h2 className="text-7xl"></h2>
         </div>
     );
 };
