@@ -12,7 +12,7 @@ const Blogs = () => {
       
     return (
         
-            <div className="">
+            <div className="py-10">
                  <section className="bg-gray-800 dark:bg-gray-100 py-6 text-gray-100 dark:text-gray-800">
 	<div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
 		<a rel="noopener noreferrer" href="#" className="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 bg-gray-900 dark:bg-gray-50">
@@ -28,8 +28,8 @@ const Blogs = () => {
 	</div>
 </section>
 
-     <div className="mt-3 grid gap-5 justify-center grid-cols-3">
-     {
+     <div className="mt-3 px-8 md:px-20 grid gap-5 justify-center md:grid-cols-2 lg:grid-cols-3">
+       {
         blogs.map(blog => <BlogCard blog={blog} key={blog.id}></BlogCard>)
        }
      </div>

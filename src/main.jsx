@@ -10,6 +10,7 @@ import Home from './Pages/Home.jsx';
 import Blogs from './Pages/Blogs.jsx';
 import BookMarks from './Pages/BookMarks.jsx';
 import MainLayout from './Pages/layouts/MainLayout.jsx';
+import Blog from './Pages/Components/Blog.jsx';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
         loader :()=> fetch('https://dev.to/api/articles?per_page=20&top=7'),
         element : <Blogs></Blogs>
       },
+      
       {
         path :'/bookmarks',
         element : <BookMarks></BookMarks>

@@ -3,9 +3,10 @@ import { Link, NavLink } from "react-router-dom";
 
 
 const Navbar = () => {
-
-    // them change funsonality start
-    const [theme,setTheme]=useState('light');
+  
+    const [theme, setTheme] = useState(() => {
+      return localStorage.getItem('theme') || 'light';
+    });
     useEffect(()=>{
         localStorage.setItem('theme',theme)
         const getThemFromLocalStorage = localStorage.getItem('theme')
