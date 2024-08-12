@@ -3,25 +3,26 @@ import { useEffect, useState } from "react";
 
 const Navbar = () => {
 
-    const [theme,setTheme]=useState(false);
-     const [changeThem,setChangeThem]=useState('light')
+    // them change funsonality start
+    const [theme,setTheme]=useState('light');
+    useEffect(()=>{
+        localStorage.setItem('theme',theme)
+        const getThemFromLocalStorage = localStorage.getItem('theme')
+      document.querySelector('html').setAttribute('data-theme',getThemFromLocalStorage)
+    },[theme])
 
-      console.log(changeThem)
-      
-      useEffect(()=>{
-        document.querySelector('html').setAttribute('data-theme',changeThem)
-      })
-
-    const handleToggol = (theme)=>{
-        setTheme(theme)
-       if(theme === true){
-        setChangeThem('synthwave')
-       }
-       else{
-        setChangeThem('light')
-       }
-      
+    const handleToggol = (event)=>{
+        if(event.target.checked === true){
+            setTheme('synthwave')
         }
+        else{
+            setTheme('light')
+        }
+     }
+    //  them chnage funconality end
+
+
+    
     
 
     return (
@@ -37,9 +38,12 @@ const Navbar = () => {
       <li className="font-bold"><a>Bookmarks</a></li>
       <li>
       <label className="grid cursor-pointer place-items-center">
-  <input onClick={()=>handleToggol(!theme)}
+        {/* importent part start for them change */}
+  <input onClick={()=>handleToggol(event)}
     type="checkbox"
     value="synthwave"
+    // importent part end for theme change
+    // value is most importent for this logic
     className="toggle theme-controller bg-base-content col-span-2 col-start-1 row-start-1" />
   <svg
     className="stroke-base-100 fill-base-100 col-start-1 row-start-1"
