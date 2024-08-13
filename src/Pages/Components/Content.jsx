@@ -1,11 +1,12 @@
 
-import { useLoaderData } from "react-router";
+import { useLoaderData, useNavigation } from "react-router";
 import  { useState, useEffect } from 'react';
 import { convert } from 'html-to-text';
 
 
-const Content = () => {
 
+const Content = () => {
+        
     const blog = useLoaderData();
     const {id,cover_image,title,description,published_at,tags,body_html} = blog;
 
@@ -20,7 +21,7 @@ const Content = () => {
     }, [body_html]);
     // convert html formet data into text end
 
-
+      
    
     console.log(blog)
     return (

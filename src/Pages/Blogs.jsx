@@ -1,15 +1,19 @@
 import { createContext } from "react";
-import { useLoaderData } from "react-router";
+import { useLoaderData, useNavigation } from "react-router";
 import BlogCard from "./Components/BlogCard";
+import Loder from "./Components/Loder";
 
 export  const BlogsContext = createContext()
 
 const Blogs = () => {
-
+     const navigation =useNavigation()
+     if(navigation.state === 'loading'){
+          return <Loder></Loder>
+        }
      const blogs = useLoaderData()
 
 //     console.log(blogs)
-      
+
     return (
         
             <div className="py-10">
