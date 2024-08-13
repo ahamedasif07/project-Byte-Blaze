@@ -52,7 +52,7 @@ const Blog = () => {
 
 
 		</div>
-		<div className="text-gray-100 dark:text-gray-800">
+		<div className="text-gray-100 w-full dark:text-gray-800">
 			<Outlet></Outlet>
 		</div>
 	</article>

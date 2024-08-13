@@ -1,7 +1,6 @@
-import Markdown from "react-markdown";
+
 import { useLoaderData } from "react-router";
-import { rehype } from "rehype";
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { convert } from 'html-to-text';
 
 
@@ -9,14 +8,17 @@ const Content = () => {
 
     const blog = useLoaderData();
     const {id,cover_image,title,description,published_at,tags,body_html} = blog;
-    const [plainText, setPlainText] = useState('');
 
+    
+    // convert html formet data into text start
+    const [plainText, setPlainText] = useState('');
     useEffect(() => {
       const text = convert(body_html, {
         wordwrap: 130, // Customize options as needed
       });
       setPlainText(text);
     }, [body_html]);
+    // convert html formet data into text end
 
 
    
@@ -24,7 +26,7 @@ const Content = () => {
     return (
         <div>
             
-            <div className="group p-2  focus:no-underline dark:bg-slate-400 border-2 hover:scale-110 "  rel="noopener noreferrer" href="#" className="max-w-sm mx-auto group hover:no-underline focus:no-underline bg-gray-900 dark:bg-gray-50">
+            <div className="group p-2  focus:no-underline  border-2  "  rel="noopener noreferrer" href="#">
 				<img role="presentation" className="object-cover w-full rounded h-44 bg-gray-500 dark:bg-gray-500" src={cover_image || placeholderImg} />
              <div className="mt-2 ">
              {
