@@ -10,10 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "html-to-text": "^9.0.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-markdown": "^9.0.1",
     "react-router": "^6.26.0",
-    "react-router-dom": "^6.26.0"
+    "react-router-dom": "^6.26.0",
+    "rehype": "^13.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",

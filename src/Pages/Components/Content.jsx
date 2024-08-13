@@ -1,9 +1,25 @@
+import Markdown from "react-markdown";
 import { useLoaderData } from "react-router";
+import { rehype } from "rehype";
+import React, { useState, useEffect } from 'react';
+import { convert } from 'html-to-text';
 
 
 const Content = () => {
+
     const blog = useLoaderData();
-    const {id,cover_image,title,description,published_at,tags} = blog;
+    const {id,cover_image,title,description,published_at,tags,body_html} = blog;
+    const [plainText, setPlainText] = useState('');
+
+    useEffect(() => {
+      const text = convert(body_html, {
+        wordwrap: 130, // Customize options as needed
+      });
+      setPlainText(text);
+    }, [body_html]);
+
+
+   
     console.log(blog)
     return (
         <div>
@@ -21,6 +37,10 @@ const Content = () => {
 					<span className="text-xs text-gray-400 dark:text-gray-600">{new Date(blog.published_at).toLocaleDateString()}</span>
 					<p>{description}</p>
 				</div>
+                <p className="px-2">
+                    {plainText}
+                    
+                </p>
 			</div>
         </div>
     );
